@@ -1,4 +1,5 @@
 const form = document.querySelector('.url-form');
+const results = document.querySelector('.result-section');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -24,7 +25,7 @@ form.addEventListener('submit', (e) => {
         }
 
         return res.json();
-    }).then((json) => {
-        console.log(location, data);
+    }).then((data) => {
+        results.innerHTML = `<a href="${data.original_url}" target="_blank">${location.origin}/${data.short_code}</a>`;
     });
 });
