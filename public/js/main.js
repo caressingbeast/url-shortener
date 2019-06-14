@@ -19,7 +19,6 @@ form.addEventListener('submit', (e) => {
         },
         body: JSON.stringify({ url })
     }).then((res) => {
-        console.log(res);
         if (!res.ok) {
             throw Error(res.statusText);
         }
